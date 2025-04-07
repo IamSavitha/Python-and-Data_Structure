@@ -29,6 +29,7 @@ if __name__ == "__main__":
     elements = [23,6,4,-1,0,12,8,3,1]
     start = 0  
     end = len(elements)-1 
+    print("before quicksort" , elements)
     quick_sort(elements,start, end )
-    print(elements)
+    print("after Quick Sort ", elements)
 
