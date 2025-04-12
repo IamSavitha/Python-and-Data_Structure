@@ -10,17 +10,18 @@ string = f.read()
 pattern1_1 =  r"\(([13579]\d{2})\)\s\d{3}-\d{4}"
 result1 = re.findall(pattern1_1, string)
 print("Section1:Q1.Phone numbers starting with odd numbers: ",result1)
+print("------------S1,Q1 number of records",len(result1),"------------")
 
 #phone_number_less_than_300 = r"(\w.+?) .+\([012]\d{2}\)"
 pattern1_2 = r"^(\w+)\s.+\(([0-2]\d{2})\)"
 result2 = [match[0] for match in re.findall(pattern1_2, string,re.MULTILINE)]
 print("Section1:Q2.First name only for whose area code is less than 300 : ",result2)
-
+print("------------S1,Q2 number of records",len(result2),"------------")
 #phone_LNaeiou_LD079 = r"(\w.+?) (\w.+[aeiou])\s .+\-(\d{3}[079])"
 pattern1_3 = r"(\w.+?) \w.+[aeiou]\s.+\-\d{3}[079]"
 result3 = re.findall(pattern1_3, string)
 print("Section1:Q3.All person's first name whose last name ends with vowel and number ends 079 : ",result3)
-
+print("------------S1,Q3 number of records",len(result3),"------------")
 #####################################################################
 ###################           Section2          #####################
 #####################################################################
@@ -36,5 +37,8 @@ result2_2 = re.findall(pattern2_2, string,re.MULTILINE)
 result2_3 = re.findall(pattern2_3, string,re.MULTILINE)
 
 print("Section2 : Q1 log entries after 12 PM and before 4 PM", result2_1)
+print("------------S2,Q1 number of records",len(result2_1),"------------")
 print("Section2 : Q2 Date of all the log entries that have TPM as the Source of the log message", result2_2)
+print("------------S2,Q2 number of records",len(result2_2),"------------")
 print("Section2 : Q3 Date and Time of all the log entries that have been generated between 24 and 27 of January 2020 and between 8:00:00 and 8:59:59 AM", result2_3)
+print("------------S2,Q3 number of records",len(result2_3),"------------")
