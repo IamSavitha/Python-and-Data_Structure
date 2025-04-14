@@ -14,4 +14,5 @@ GO to folder holding the app.py file
 - RUN  COMMAND " streamlit run app.py"
    
 
-
+GRadio 
+![alt text](image.png)
