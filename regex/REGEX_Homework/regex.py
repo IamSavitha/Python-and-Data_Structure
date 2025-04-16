@@ -7,9 +7,9 @@ f = open(r"phone.txt")
 string = f.read()
 #all_phone_pattern = r".+\s (.+)" #all numbers 
 #phone_number_odd_start = r".+\s([13579]\d{2})\s\d{3}-\d{4}"
-pattern1_1 =  r"\(([13579]\d{2})\)\s\d{3}-\d{4}"
-result1 = re.findall(pattern1_1, string)
-print("Section1:Q1.Phone numbers starting with odd numbers: ",result1)
+pattern1_1 =  r"^([A-Za-z]+ [A-Za-z]+)\s+\([13579]\d{2}\)\s\d{3}-\d{4}"
+result1 = re.findall(pattern1_1, string,re.MULTILINE)
+print("Section1:Q1.People who's Phone numbers starting with odd numbers: ",result1)
 print("------------S1,Q1 number of records",len(result1),"------------")
 
 #phone_number_less_than_300 = r"(\w.+?) .+\([012]\d{2}\)"
@@ -25,7 +25,6 @@ print("------------S1,Q3 number of records",len(result3),"------------")
 #####################################################################
 ###################           Section2          #####################
 #####################################################################
-
 f = open(r"logs.txt")
 
 string = f.read()
