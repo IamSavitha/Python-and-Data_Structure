@@ -1,4 +1,3 @@
-
 import tkinter as tk
 from tkinter import messagebox, filedialog, simpledialog , StringVar, OptionMenu
 from stock_data import *
