@@ -2,7 +2,6 @@ import stock_data
 from stock_data import Stock
 import matplotlib.pyplot as plt
 
-# Sample in-memory portfolio
 stock_list = []
 
 def main_menu():

@@ -1,0 +1,136 @@
+pandas 
+
+drop duplicate 
+
+df.drop_duplicates(inplace=True)  # Removes duplicates in place
+
+Find Unique Values
+
+
+
+df['column_name'].unique()  # Unique values in a column
+
+Change Column Case
+
+df.columns = df.columns.str.upper()     # Capital case
+df.columns = df.columns.str.lower()     # Lower case
+df.columns = df.columns.str.capitalize()  # First letter capital
+Group By
+
+python
+Copy
+Edit
+df.groupby('column_name').mean()  # Can also use .sum(), .count(), etc.
+Sorting Values
+
+python
+Copy
+Edit
+df.sort_values(by='column_name', ascending=True, inplace=True)
+Conditional Search (2D Array style)
+
+python
+Copy
+Edit
+df[(df['col1'] > 5) & (df['col2'] < 10)]           # AND
+df[(df['col1'] > 5) | (df['col2'] < 10)]           # OR
+df[~(df['col1'] == 5)]                             # NOT
+df[df['col1'] != 5]                                # NOT Equal
+Read & Modify CSV In-Place
+
+python
+Copy
+Edit
+df = pd.read_csv('file.csv')
+df['new_col'] = df['old_col'] * 2
+df.to_csv('file.csv', index=False)  # Overwrites the original file
+Swap Columns (One-liner)
+
+python
+Copy
+Edit
+df[['col1', 'col2']] = df[['col2', 'col1']]
+🧮 NumPy
+Swap Columns
+
+python
+Copy
+Edit
+arr[:, [0, 1]] = arr[:, [1, 0]]  # Swap first and second columns
+axis=0 vs axis=1
+
+axis=0: Operate down rows (column-wise)
+
+axis=1: Operate across columns (row-wise)
+
+Conditional Statements
+
+python
+Copy
+Edit
+(arr > 5) & (arr < 10)  # AND
+(arr < 3) | (arr > 8)   # OR
+~(arr == 5)             # NOT
+Conditional Range
+
+python
+Copy
+Edit
+arr[(arr > 10) & (arr < 20)]
+loadtxt vs genfromtxt
+
+np.loadtxt: Assumes clean, well-formatted data.
+
+np.genfromtxt: More robust, handles missing values, headers.
+
+In-place Modification
+
+python
+Copy
+Edit
+arr[:] = arr * 2  # Modify without changing reference
+np.where, np.isnan, np.unique
+
+python
+Copy
+Edit
+np.where(arr > 10)               # Indices where condition is met
+np.isnan(arr)                    # Boolean array of NaNs
+np.unique(arr, return_counts=True)  # Unique values and counts
+Common Elements
+
+python
+Copy
+Edit
+np.intersect1d(arr1, arr2)
+Convert 1D to Multi-Dimensional
+
+python
+Copy
+Edit
+arr = np.arange(12)
+arr_reshaped = arr.reshape(3, 4)   # 3 rows, 4 columns
+arr.reshape(-1, 4)  # -1 infers the correct dimension automatically
+Stacking Arrays
+
+python
+Copy
+Edit
+np.hstack((arr1, arr2))  # Horizontal
+np.vstack((arr1, arr2))  # Vertical
+Utility Functions
+
+python
+Copy
+Edit
+arr.copy()                     # Deep copy
+np.arange(10)                  # Range array
+arr.reshape((2, 5))            # Reshape
+np.repeat(arr, 2)              # Repeat elements
+np.tile(arr, 2)                # Repeat whole array
+np.intersect1d(a, b)           # Common values
+np.setdiff1d(a, b)             # Unique in a not in b
+np.set_printoptions(precision=2)  # Formatting
+np.random.random((2, 2))       # Random float array
+np.isnan(arr)                  # NaN check
+np.any(arr > 5)                # Any True?
